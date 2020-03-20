@@ -4,8 +4,11 @@ import Item from '../components/Item'
 import Input from '../components/Input'
 
 const Shop = () => {
+
   const [items, setItems] = useState(['feed dog', 'buy food'])
   
+  const [item, setItem] = useState("")
+
   const addItem = item => {
     setItems([...items, item])
   }
@@ -17,7 +20,7 @@ const Shop = () => {
       <View style={css.container}>
           
           <View style={css.input}>
-              <Input addItem={addItem} />
+              <Input value={item} addItem={addItem} />
           </View>
           
           <View style={css.items}>

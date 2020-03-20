@@ -5,7 +5,7 @@ import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
-const content = [ <Shop />, <Fridge />, <Freezer />]
+const content = [ <Shop />, <Fridge />, <Freezer /> ]
 
 const App = () => {
 
@@ -15,30 +15,35 @@ const App = () => {
     <View style={css.container}>
       <View style={[css.header, css.centered]}>
         <Text style={css.whiteTxt}>Header</Text>
-        
       </View>
 
 
       <View style={css.display}>
-        <Text> { content[pos]} </Text>
-        {/* <View style={css.shop} onPress={ () => setProvidesAudioData(0) } title="side1" >
-          <Text>Shop</Text>
+
+        <Text>{ content[2] }</Text>
+
+        <View style={css.shop} title="Shop">
+          <Button onPress={ () => setPos(0) } title="Shop">
+            <Text>Shop</Text>
+          </Button>
         </View>
+
         <View style={css.refrigerator}>
-          <Text>Refrigerator</Text>
+          <Button onPress={ () => setPos(1) } title="Fridge">
+            <Text>Refrigerator</Text>
+          </Button>
         </View>
+
         <View style={css.frozen}>
-          <Text>Freezer</Text>
+          <Button onPress={ () => setPos(2) } title="Freezer">
+            <Text>Freezer</Text>
+          </Button>
         </View>
-        <View style={css.dry}>
-          <Text>Dry goods</Text>
-        </View> */}
+        
       </View>
 
       <View style={[css.footer, css.centered]}>
-        <Button onPress={ () => setPos(0) } title="Shop"><View style={css.button}></View></Button>
-        <Button onPress={ () => setPos(1) } title="Fridge"><View style={css.button}></View></Button>
-        <Button onPress={ () => setPos(2) } title="Freezer"><View style={css.button}></View></Button>
+        
       </View>
 
     </View>
