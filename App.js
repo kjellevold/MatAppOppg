@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity } from 'react-native'
-import { setProvidesAudioData } from 'expo/build/AR'
 import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
 const content = [ <Shop />, <Fridge />, <Freezer /> ]
 
-const App = () => {
+const App = () => { 
 
-  const [pos, setPos] = useState(0)
+  const [pos, setPos] = useState(2)
 
   return(
     <View style={css.container}>
