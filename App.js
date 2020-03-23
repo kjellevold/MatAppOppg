@@ -1,50 +1,43 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
-const content = [ <Shop />, <Fridge />, <Freezer /> ]
+const content = [ <Shop key='0' />, <Fridge key='1' />, <Freezer key='2' /> ]
 
 const App = () => { 
 
-  const [pos, setPos] = useState(2)
+  const [pos, setPos] = useState(1)
 
   return(
     <View style={css.container}>
+
       <View style={[css.header, css.centered]}>
         <Text style={css.whiteTxt}>Header</Text>
       </View>
 
-
       <View style={css.display}>
-
-        <Text>{ content[2] }</Text>
-
-        <View style={css.shop} title="Shop">
-          <Button onPress={ () => setPos(0) } title="Shop">
-            <Text>Shop</Text>
-          </Button>
-        </View>
-
-        <View style={css.refrigerator}>
-          <Button onPress={ () => setPos(1) } title="Fridge">
-            <Text>Refrigerator</Text>
-          </Button>
-        </View>
-
-        <View style={css.frozen}>
-          <Button onPress={ () => setPos(2) } title="Freezer">
-            <Text>Freezer</Text>
-          </Button>
-        </View>
-        
+          {content[pos]}
       </View>
 
-      <View style={[css.footer, css.centered]}>
-        
-      </View>
 
+      <ScrollView>
+
+          <View style={css.shop} title="Shop">
+            <Button onPress={ () => setPos(0) } title="Shop" />
+          </View>
+
+          <View style={css.refrigerator}>
+            <Button onPress={ () => setPos(1) } title="Fridge" />
+          </View>
+
+          <View style={css.frozen}>
+            <Button onPress={ () => setPos(2) } title="Freezer" />
+          </View>
+      </ScrollView>
+
+      <View style={[css.footer, css.centered]}></View>
     </View>
   )
 }
@@ -72,8 +65,7 @@ const css = StyleSheet.create({
     alignItems: 'center'
   },
   shop: {
-    width: '90%',
-    height: '20%',
+    height: 50,
     justifyContent: 'center',
     backgroundColor: '#CCD1D1',
     marginTop: 15,
@@ -86,9 +78,8 @@ const css = StyleSheet.create({
     padding: 5
   },
   refrigerator: {
-    width: '90%',
-    height: '20%',
     justifyContent: 'center',
+    height: 50,
     backgroundColor: '#CCD1D1',
     marginTop: 15,
     marginLeft: 10,
@@ -100,8 +91,7 @@ const css = StyleSheet.create({
     padding: 5
   },
   frozen: {
-    width: '90%',
-    height: '20%',
+    height: 50,
     justifyContent: 'center',
     backgroundColor: '#CCD1D1',
     marginTop: 15,

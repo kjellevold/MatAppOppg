@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Item = props => {
-    console.log(props)
+    console.log(props.element)
     return(
         <TouchableOpacity onPress={() => props.removeItem(props.id)}>
             <View style={styles.item}>
