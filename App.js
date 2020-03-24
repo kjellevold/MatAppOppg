@@ -1,51 +1,33 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity } from 'react-native'
-import { setProvidesAudioData } from 'expo/build/AR'
+import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
+import Home from './screens/Home.js'
 import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
-const content = [ <Shop />, <Fridge />, <Freezer /> ]
+const content = [ <Home key='0' />, <Shop key='1' />, <Fridge key='2' />, <Freezer key='3' /> ]
 
-const App = () => {
+const App = () => { 
 
-  const [pos, setPos] = useState(0)
+  const [pos, setPos] = useState(1)
 
   return(
     <View style={css.container}>
-      <View style={[css.header, css.centered]}>
-        <Text style={css.whiteTxt}>Header</Text>
+
+      <View style={css.header}>
+        <Text style={[css.whiteTxt, css.centered]}>Header</Text>
+        <View style={css.home} title="Home">
+            <Button onPress={ () => setPos(0) } title="<" />
+          </View>
       </View>
 
-
+    
       <View style={css.display}>
-
-        <Text>{ content[2] }</Text>
-
-        <View style={css.shop} title="Shop">
-          <Button onPress={ () => setPos(0) } title="Shop">
-            <Text>Shop</Text>
-          </Button>
-        </View>
-
-        <View style={css.refrigerator}>
-          <Button onPress={ () => setPos(1) } title="Fridge">
-            <Text>Refrigerator</Text>
-          </Button>
-        </View>
-
-        <View style={css.frozen}>
-          <Button onPress={ () => setPos(2) } title="Freezer">
-            <Text>Freezer</Text>
-          </Button>
-        </View>
-        
+          {content[pos]}
       </View>
 
-      <View style={[css.footer, css.centered]}>
-        
-      </View>
 
+      <View style={[css.footer, css.centered]}></View>
     </View>
   )
 }
@@ -64,69 +46,31 @@ const css = StyleSheet.create({
   },
   header: {
     flex: 2,
-    backgroundColor: '#546E7A',
-    
+    backgroundColor: '#EDBB99',
+  },
+  home: {
+    position: 'absolute',
+    top: 70,
+    left: 20,
+    alignItems: 'flex-start',
+    paddingTop: 30,
+    width: '10%',
+    height: '30%',
+    borderRadius: 10,
+    borderColor:'#e6ebeb',
+    borderWidth: 1,
+    shadowColor: '#CCD1D1',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 10,
+    shadowOpacity: 7,
+    elevation: 8,
+    backgroundColor: 'white',
+    borderRadius: 8
   },
   display: {
     flex: 9,
     flexDirection: 'column',
     alignItems: 'center'
-  },
-  shop: {
-    width: '90%',
-    height: '20%',
-    justifyContent: 'center',
-    backgroundColor: '#CCD1D1',
-    marginTop: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    borderRadius: 8,
-    borderColor:'#CCD1D1',
-    borderWidth: 1,
-    padding: 5
-  },
-  refrigerator: {
-    width: '90%',
-    height: '20%',
-    justifyContent: 'center',
-    backgroundColor: '#CCD1D1',
-    marginTop: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    borderRadius: 8,
-    borderColor:'#CCD1D1',
-    borderWidth: 1,
-    padding: 5
-  },
-  frozen: {
-    width: '90%',
-    height: '20%',
-    justifyContent: 'center',
-    backgroundColor: '#CCD1D1',
-    marginTop: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    borderRadius: 8,
-    borderColor:'#CCD1D1',
-    borderWidth: 1,
-    padding: 5
-  },
-  dry: {
-    width: '90%',
-    height: '20%',
-    justifyContent: 'center',
-    backgroundColor: '#CCD1D1',
-    marginTop: 15,
-    marginLeft: 10,
-    marginRight: 10,
-    alignItems: 'center',
-    borderRadius: 8,
-    borderColor:'#CCD1D1',
-    borderWidth: 1,
-    padding: 5
   },
   footer: {
     flex: 1,
