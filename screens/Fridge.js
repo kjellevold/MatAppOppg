@@ -6,7 +6,7 @@ import InputFood from '../components/InputFood'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const Fridge = () => {
-    const [items, setItems] = useState(['tomato', 'banana', 'ketchup', 'ham', 'milk'])
+    const [items, setItems] = useState(['tomato', 'banana', 'dogfood', 'ketchup', 'ham', 'milk'])
     const [item, setItem] = useState("")
     const addItem = item => {
         setItems([...items, item])
@@ -14,7 +14,7 @@ const Fridge = () => {
     const removeItem = id => {setItems( items.filter((element, index) => index != id))}
 
     return(
-        <View style={css.container}>
+        <View>
             
             <View style={css.input}>
                 <InputFood value={item} add={addItem} />
@@ -37,10 +37,6 @@ const Fridge = () => {
 }
 
 const css = StyleSheet.create({
-    container:{
-        /* justifyContent: 'center',
-        alignItems: 'center' */
-    },
     centered: {
         /* justifyContent: 'center', */
         /* alignItems: 'center', */
@@ -51,10 +47,10 @@ const css = StyleSheet.create({
         backgroundColor: '#ffe8d9',
     },
     items: {
-        width: '90%',
         margin: '5%',
         flex: 9,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        
 
     }
 })

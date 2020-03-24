@@ -14,11 +14,18 @@ const ItemFood = props => {
 }
 
 const css = StyleSheet.create({
-    constiner: {
-        maxWidth: '100%'
+    container: {
+        width: '100%',
+        flex:9,
+        flexDirection: 'row'
     },
     item: {
-        flexDirection: 'row',
+        height:100,
+        width:100,
+        justifyContent:'center',
+        alignItems:'center',
+        
+        /* flexDirection:'row',
         alignContent: 'flex-start',
         height: '80%',
         width: '40%',
@@ -34,11 +41,13 @@ const css = StyleSheet.create({
         shadowOpacity: 7,
         elevation: 8,
         backgroundColor: 'white',
-        borderRadius: 8
+        borderRadius: 8, */
+        
     },
     itemText: {
         color: '#546E7A',
         fontSize: 20,
+        
     },
 })
 
