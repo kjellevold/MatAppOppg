@@ -9,7 +9,7 @@ const Input = props => {
     }
     return(
         <View>
-            <TextInput style={css.input} placeholder="gimme items man" value={value} onChangeText={txt => setValue(txt)} />
+            <TextInput style={css.input} placeholder="Add a item..." value={value} onChangeText={txt => setValue(txt)} />
             <Button title='add item' onPress={addItem} />
         </View>
     )

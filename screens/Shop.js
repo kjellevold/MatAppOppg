@@ -1,11 +1,11 @@
 import React, { useState } from  'react'
-import { View, Text, Button, TextInput, StyleSheet, ScrollView } from 'react-native'
+import { View, StyleSheet, ScrollView } from 'react-native'
 import Item from '../components/Item'
 import Input from '../components/Input'
 
 const Shop = () => {
 
-  const [items, setItems] = useState(['feed dog', 'buy food'])
+  const [items, setItems] = useState(['pizzastuff', 'pitahaya', 'dogfood', 'orange'])
   
   const [item, setItem] = useState("")
 
@@ -14,7 +14,6 @@ const Shop = () => {
   }
 
   const removeItem = id => {setItems( items.filter((element, index) => index != id))}
-
 
   return(
       <View style={css.container}>
@@ -47,32 +46,16 @@ const css = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
       },
-      header: {
-        flex: 2,
-        backgroundColor: 'pink',
-      },
-      headerText: { 
-        marginTop: 30,
-        color: 'white',
-        fontSize: 24,
-      },
       input: {
         marginTop: 3,
         flex: 2,
-        backgroundColor: '#eee',
+        backgroundColor: '#ffe8d9',
       },
       items: {
+        flexDirection: 'column',
         margin: '5%',
         flex: 9,
-        backgroundColor: 'white',
-      },
-      footer: {
-        flex: 1,
-        backgroundColor: 'pink',
-      },
-      footerText: {
-        color: 'white',
-      },
+      }
 })
 
 export default Shop

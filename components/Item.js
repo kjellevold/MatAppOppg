@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 const Item = props => {
-    console.log(props)
     return(
         <TouchableOpacity onPress={() => props.removeItem(props.id)}>
             <View style={styles.item}>
@@ -16,15 +15,23 @@ const styles = StyleSheet.create({
     item: {
         height: 60,
         width: '100%',
-        backgroundColor: '#D35400',
         marginTop: 8,
-        borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 10,
+        borderColor:'#e6ebeb',
+        borderWidth: 1,
+        shadowColor: '#CCD1D1',
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 5,
+        shadowOpacity: 7,
+        elevation: 8,
+        backgroundColor: 'white',
+        borderRadius: 8
     },
     itemText: {
-        color: 'white',
-        fontSize: 16,
+        color: '#546E7A',
+        fontSize: 18,
     },
 })
 

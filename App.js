@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TextInut, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import Home from './screens/Home.js'
 import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
@@ -9,23 +9,27 @@ const content = [ <Home key='0' />, <Shop key='1' />, <Fridge key='2' />, <Freez
 
 const App = () => { 
 
-  const [pos, setPos] = useState(1)
+  const [pos, setPos] = useState(0)
 
   return(
     <View style={css.container}>
 
       <View style={css.header}>
-        <Text style={[css.whiteTxt, css.centered]}>Header</Text>
-        <View style={css.home} title="Home">
+        <Text style={[css.whiteTxt, css.headerTxt]}>Food Shopping</Text>
+        <TouchableOpacity onPress = {() => setPos(0)}>
+              <View style={css.home}>
+                  <Image style={css.image} source={require('./assets/homeBtnW.png')} />
+              </View>
+          </TouchableOpacity>
+
+        {/* <View style={[css.home, css.centered]} title="Home">
             <Button onPress={ () => setPos(0) } title="<" />
-          </View>
+          </View> */}
       </View>
 
-    
       <View style={css.display}>
-          {content[pos]}
+          {content[2]}
       </View>
-
 
       <View style={[css.footer, css.centered]}></View>
     </View>
@@ -45,17 +49,32 @@ const css = StyleSheet.create({
     color: 'white'
   },
   header: {
-    flex: 2,
-    backgroundColor: '#EDBB99',
+    flex: 2.5,
+    backgroundColor: '#E0905C',
+  },
+  image: {
+    width: 40,
+    height: 43
+  },
+  headerTxt: {
+    width: 140,
+    position: 'absolute',
+    left: '60%',
+    top: 60,
+    fontSize: 30,
+    fontWeight: '800',
+    textAlign: 'right'
   },
   home: {
     position: 'absolute',
-    top: 70,
+    top: 87,
     left: 20,
     alignItems: 'flex-start',
-    paddingTop: 30,
-    width: '10%',
-    height: '30%',
+    margin: 0,
+    paddingLeft: 0,
+    width: 60,
+    height: 60,
+    /* 
     borderRadius: 10,
     borderColor:'#e6ebeb',
     borderWidth: 1,
@@ -65,15 +84,15 @@ const css = StyleSheet.create({
     shadowOpacity: 7,
     elevation: 8,
     backgroundColor: 'white',
-    borderRadius: 8
+    borderRadius: 8, */
   },
   display: {
-    flex: 9,
-    flexDirection: 'column',
+    flex: 10,
+    /* flexDirection: 'column', */
     alignItems: 'center'
   },
   footer: {
-    flex: 1,
+    flex: 1.5,
     backgroundColor: '#546E7A',
     flexDirection: 'row'
   },
