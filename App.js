@@ -9,7 +9,7 @@ const content = [ <Home key='0' />, <Shop key='1' />, <Fridge key='2' />, <Freez
 
 const App = () => { 
 
-  const [pos, setPos] = useState(0)
+  const [pos, setPos] = useState(1)
 
   return(
     <View style={css.container}>

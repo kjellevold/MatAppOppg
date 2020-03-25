@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import { Button, TextInput, View, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const Input = props => {
     const [value, setValue] = useState('')
     const addItem = () => {
+        console.log('adding item ', value)
         props.addItem(value)
         setValue('')
     }
@@ -17,7 +19,7 @@ const Input = props => {
 
 const css = StyleSheet.create({
     input: {
-        height: 50,
+        height: 100,
         minWidth: '100%',
         borderColor: 'white',
         borderBottomWidth: 1,
