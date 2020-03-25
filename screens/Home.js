@@ -1,41 +1,31 @@
 import React, { useState } from 'react'
-import { View, ScrollView, StyleSheet, Button, TouchableOpacity, Text } from 'react-native'
+import { View, ScrollView, StyleSheet, Image, TouchableOpacity, Text } from 'react-native'
 
 
 const Home = (props) => {
 
     return(
         <View style={[css.container, css.display, css.centered]}>
-            
-      <ScrollView>
-          <TouchableOpacity onPress = {() => props.setAppPos(1)}>
-              <View style={css.box}>
-                  <Text style={css.txt}>Shopping list</Text>
-              </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress = {() => props.setAppPos(2)}>
-              <View style={css.box}>
-                  <Text style={css.txt}>Frige</Text>
-              </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress = {() => props.setAppPos(3)}>
-              <View style={css.box}>
-                  <Text style={css.txt}>Freezer</Text>
-              </View>
-          </TouchableOpacity>
-
-
-          {/* <View style={css.box}>
-            <Button onPress={ () => setPos(0) } title="Shop" />
-          </View>
-          <View style={css.box}>
-            <Button onPress={ () => setPos(1) } title="Fridge" />
-          </View>
-          <View style={css.box}>
-            <Button onPress={ () => setPos(2) } title="Freezer" />
-          </View> */}
-
-      </ScrollView>
+            <ScrollView>
+                <TouchableOpacity onPress = {() => props.setAppPos(1)}>
+                    <View style={css.box}>
+                        <Image style={css.image} source={require('../assets/shop.png')}  />
+                        <Text style={css.txt}>Shop list</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {() => props.setAppPos(2)}>
+                    <View style={css.box}>
+                        <Image style={css.image} source={require('../assets/frigde.png')}  />
+                        <Text style={css.txt}>Fridge</Text>
+                    </View>
+                </TouchableOpacity>
+                <TouchableOpacity onPress = {() => props.setAppPos(3)}>
+                    <View style={css.box}>
+                        <Image style={css.image} source={require('../assets/freezer.png')}  />
+                        <Text style={css.txt}>Freezer</Text>
+                    </View>
+                </TouchableOpacity>
+            </ScrollView>
         </View>
     )
 }
@@ -64,17 +54,24 @@ const css = StyleSheet.create({
         color: '#546E7A',
         fontSize: 20,
         fontWeight: '400',
+        paddingLeft: 20
+    },
+    image: {
+        width: 60,
+        height: 70,
+        paddingRight: 10
     },
     box: {
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 15,
         marginBottom: 1,
         marginLeft: 50,
         marginRight: 50,
-        paddingTop: 60,
-        paddingBottom: 60,
-        paddingLeft: 60,
+        paddingTop: 40,
+        paddingBottom: 40,
+        paddingLeft: 40,
         paddingRight: 100,
         borderRadius: 10,
         borderColor:'#e6ebeb',

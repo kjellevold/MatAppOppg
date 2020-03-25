@@ -19,7 +19,7 @@ const InputFood = props => {
 const css = StyleSheet.create({
     input: {
         height: 50,
-        minWidth: '100%',
+        width: '100%',
         borderColor: 'white',
         borderBottomWidth: 1,
         marginBottom: 6,

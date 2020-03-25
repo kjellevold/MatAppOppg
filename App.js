@@ -7,32 +7,29 @@ import Freezer from './screens/Freezer.js'
 
 
 const App = () => { 
-  
   const [pos, setPos] = useState(0)
-  const content = [ <Home key='0' setAppPos={setPos} header='Food Shopping' />, <Shop key='1' header='Shopping list' />, <Fridge key='2' header='Whats in your fridge?' />, <Freezer key='3' header='Whats in your freezer?' /> ]
+ 
+  const content = [ 
+    <Home key='0' setAppPos={setPos} header='Food Shopping' />, 
+    <Shop key='1' header='Shopping list' />, 
+    <Fridge key='2' header='The Fridge' />, 
+    <Freezer key='3' header='The Freezer' /> 
+  ]
 
   return(
     <View style={css.container}>
-
       <View style={css.header} >
         <TouchableOpacity onPress = {() => setPos(0)} >
           <View style={css.home} >
             <Image style={css.image} source={require('./assets/homeBtnW.png')}  />
           </View>
         </TouchableOpacity>
-        <Text style={[css.whiteTxt, css.headerTxt]} >Food Shopping</Text>
-
-
-
-        {/* <View style={[css.home, css.centered]} title="Home">
-            <Button onPress={ () => setPos(0) } title="<" />
-          </View> */}
+        <Text style={[css.whiteTxt, css.headerTxt]}>Food Shopping</Text>
+        <Text>{content[pos].header}</Text>
       </View>
-
       <View style={css.display}>
           {content[pos]}
       </View>
-
       <View style={[css.footer, css.centered]}></View>
     </View>
   )
@@ -56,13 +53,16 @@ const css = StyleSheet.create({
     backgroundColor: '#E0905C',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 12
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20
   },
   image: {
     width: 40,
     height: 43
   },
   headerTxt: {
+    marginLeft: 150,
     width: 140,
     fontSize: 30,
     fontWeight: '800',
@@ -71,6 +71,7 @@ const css = StyleSheet.create({
   home: {
     margin: 0,
     paddingLeft: 0,
+    paddingTop: 20,
     width: 60,
     height: 60,
     /* 

@@ -30,10 +30,7 @@ const Fridge = () => {
                     }
                     </View>
                 </ScrollView>
-
             </View>
-
-
 
         </View>
     )
@@ -41,8 +38,7 @@ const Fridge = () => {
 
 const css = StyleSheet.create({
     container: {
-        maxWidth: '90%',
-        backgroundColor: '#eee',
+        maxWidth: '100%',
     },
     input: {
         marginTop: 3,

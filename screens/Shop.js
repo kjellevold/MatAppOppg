@@ -10,7 +10,6 @@ const Shop = () => {
   const [item, setItem] = useState("")
 
   const addItem = item => {
-    console.log('adding ', item)
     setItems([...items, item])
   }
 
@@ -35,7 +34,6 @@ const Shop = () => {
           
       </View>
   )
-
 }
 
 const css = StyleSheet.create({
