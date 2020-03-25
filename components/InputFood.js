@@ -4,7 +4,7 @@ import { Button, TextInput, View, StyleSheet } from 'react-native'
 const InputFood = props => {
     const [value, setValue] = useState('')
     const addItem = () => {
-        props.addItem(value)
+        props.add(value)
         setValue('')
     }
 

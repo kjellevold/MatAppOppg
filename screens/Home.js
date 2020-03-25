@@ -1,29 +1,24 @@
 import React, { useState } from 'react'
 import { View, ScrollView, StyleSheet, Button, TouchableOpacity, Text } from 'react-native'
 
-import Shop from './Shop'
-import Fridge from './Fridge.js'
-import Freezer from './Freezer.js'
 
-const content = [ <Shop key='0' />, <Fridge key='1' />, <Freezer key='2' /> ]
+const Home = (props) => {
 
-const Home = () => {
-    const [pos, setPos] = useState(0)
     return(
         <View style={[css.container, css.display, css.centered]}>
             
       <ScrollView>
-          <TouchableOpacity onPress = {() => setPos(0)}>
+          <TouchableOpacity onPress = {() => props.setAppPos(1)}>
               <View style={css.box}>
                   <Text style={css.txt}>Shopping list</Text>
               </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress = {() => setPos(1)}>
+          <TouchableOpacity onPress = {() => props.setAppPos(2)}>
               <View style={css.box}>
                   <Text style={css.txt}>Frige</Text>
               </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress = {() => setPos(2)}>
+          <TouchableOpacity onPress = {() => props.setAppPos(3)}>
               <View style={css.box}>
                   <Text style={css.txt}>Freezer</Text>
               </View>

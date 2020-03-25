@@ -14,20 +14,23 @@ const Fridge = () => {
     const removeItem = id => {setItems( items.filter((element, index) => index != id))}
 
     return(
-        <View>
+        <View style={css.container}>
             
             <View style={css.input}>
                 <InputFood value={item} add={addItem} />
             </View>
 
-            <View style={css.items}>
-                <ScrollView>
+            <View style={css.itemContainer}>
+                <ScrollView >
+                    <View style={css.items}>
                     {
                         items.map( (element, index) => 
-                            <ItemFood removeItem={removeItem} key={index} id={index} element={element} />
+                            <ItemFood style={css.item} removeItem={removeItem} key={index} id={index} element={element} />
                         )
                     }
+                    </View>
                 </ScrollView>
+
             </View>
 
 
@@ -37,22 +40,30 @@ const Fridge = () => {
 }
 
 const css = StyleSheet.create({
-    centered: {
-        /* justifyContent: 'center', */
-        /* alignItems: 'center', */
+    container: {
+        maxWidth: '90%',
+        backgroundColor: '#eee',
     },
     input: {
         marginTop: 3,
         flex: 2,
         backgroundColor: '#ffe8d9',
     },
+    itemContainer: {
+        flex: 9
+    },
     items: {
-        margin: '5%',
-        flex: 9,
         flexDirection: 'row',
-        
+        flexWrap: 'wrap',
+        padding: 20,
+        justifyContent: 'space-between',
+    },
+    item: {
+        width: 100,
+        backgroundColor: 'orange',
 
     }
+
 })
 
 export default Fridge

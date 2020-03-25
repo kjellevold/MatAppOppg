@@ -1,26 +1,28 @@
 import React, { useState } from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, Button, ScrollView } from 'react-native'
 import Home from './screens/Home.js'
 import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
-const content = [ <Home key='0' />, <Shop key='1' />, <Fridge key='2' />, <Freezer key='3' /> ]
 
 const App = () => { 
-
-  const [pos, setPos] = useState(1)
+  
+  const [pos, setPos] = useState(0)
+  const content = [ <Home key='0' setAppPos={setPos} header='Food Shopping' />, <Shop key='1' header='Shopping list' />, <Fridge key='2' header='Whats in your fridge?' />, <Freezer key='3' header='Whats in your freezer?' /> ]
 
   return(
     <View style={css.container}>
 
-      <View style={css.header}>
-        <Text style={[css.whiteTxt, css.headerTxt]}>Food Shopping</Text>
-        <TouchableOpacity onPress = {() => setPos(0)}>
-              <View style={css.home}>
-                  <Image style={css.image} source={require('./assets/homeBtnW.png')} />
-              </View>
-          </TouchableOpacity>
+      <View style={css.header} >
+        <TouchableOpacity onPress = {() => setPos(0)} >
+          <View style={css.home} >
+            <Image style={css.image} source={require('./assets/homeBtnW.png')}  />
+          </View>
+        </TouchableOpacity>
+        <Text style={[css.whiteTxt, css.headerTxt]} >Food Shopping</Text>
+
+
 
         {/* <View style={[css.home, css.centered]} title="Home">
             <Button onPress={ () => setPos(0) } title="<" />
@@ -28,7 +30,7 @@ const App = () => {
       </View>
 
       <View style={css.display}>
-          {content[2]}
+          {content[pos]}
       </View>
 
       <View style={[css.footer, css.centered]}></View>
@@ -50,7 +52,11 @@ const css = StyleSheet.create({
   },
   header: {
     flex: 2.5,
+    flexDirection: 'row',
     backgroundColor: '#E0905C',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 12
   },
   image: {
     width: 40,
@@ -58,18 +64,11 @@ const css = StyleSheet.create({
   },
   headerTxt: {
     width: 140,
-    position: 'absolute',
-    left: '60%',
-    top: 60,
     fontSize: 30,
     fontWeight: '800',
     textAlign: 'right'
   },
   home: {
-    position: 'absolute',
-    top: 87,
-    left: 20,
-    alignItems: 'flex-start',
     margin: 0,
     paddingLeft: 0,
     width: 60,

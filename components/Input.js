@@ -19,7 +19,7 @@ const Input = props => {
 
 const css = StyleSheet.create({
     input: {
-        height: 100,
+        height: 60,
         minWidth: '100%',
         borderColor: 'white',
         borderBottomWidth: 1,
