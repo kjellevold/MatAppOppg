@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 85153,
-  "expoServerNgrokUrl": "https://yb-nir.anonymous.matappoppg.exp.direct",
-  "packagerNgrokUrl": "https://packager.yb-nir.anonymous.matappoppg.exp.direct",
-  "ngrokPid": 85163,
+  "packagerPid": 879,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": 19006
 }

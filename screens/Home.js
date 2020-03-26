@@ -9,7 +9,7 @@ const Home = (props) => {
             <ScrollView>
                 <TouchableOpacity onPress = {() => props.setAppPos(1)}>
                     <View style={css.box}>
-                        <Image style={css.image} source={require('../assets/shop.png')}  />
+                        <Image style={css.image} source={require('../assets/list.png')}  />
                         <Text style={css.txt}>Shop list</Text>
                     </View>
                 </TouchableOpacity>
@@ -57,8 +57,8 @@ const css = StyleSheet.create({
         paddingLeft: 20
     },
     image: {
-        width: 60,
-        height: 70,
+        width: 55,
+        height: 65,
         paddingRight: 10
     },
     box: {

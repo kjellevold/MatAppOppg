@@ -5,7 +5,6 @@ import Shop from './screens/Shop.js'
 import Fridge from './screens/Fridge.js'
 import Freezer from './screens/Freezer.js'
 
-
 const App = () => { 
   const [pos, setPos] = useState(0)
  
