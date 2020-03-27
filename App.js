@@ -9,27 +9,42 @@ const App = () => {
   const [pos, setPos] = useState(0)
  
   const content = [ 
-    <Home key='0' setAppPos={setPos} header='Food Shopping' />, 
-    <Shop key='1' header='Shopping list' />, 
-    <Fridge key='2' header='The Fridge' />, 
-    <Freezer key='3' header='The Freezer' /> 
+    <Home key='0' setAppPos={setPos} title='Food Shopping' />, 
+    <Shop key='1' title='Shopping list' />, 
+    <Fridge key='2' title='The Fridge' />, 
+    <Freezer key='3' title='The Freezer' /> 
   ]
+
+  let title = 'Food Shopping'
+  /* 
+  if( content[1] = true ){
+    let title = 'Shopping list'
+  } 
+  if( content[2] = true ){
+    let title = 'The Fridge'
+  } 
+  if( content[3] = true ){
+    let title = 'The Freezer'
+  } */
 
   return(
     <View style={css.container}>
+
       <View style={css.header} >
         <TouchableOpacity onPress = {() => setPos(0)} >
           <View style={css.home} >
             <Image style={css.image} source={require('./assets/homeBtnW.png')}  />
           </View>
         </TouchableOpacity>
-        <Text style={[css.whiteTxt, css.headerTxt]}>Food Shopping</Text>
-        <Text>{content[pos].header}</Text>
+        <Text style={[css.whiteTxt, css.headerTxt]}>{title}</Text>
       </View>
+
       <View style={css.display}>
           {content[pos]}
       </View>
+
       <View style={[css.footer, css.centered]}></View>
+
     </View>
   )
 }

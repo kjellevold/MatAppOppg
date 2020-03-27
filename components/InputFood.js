@@ -10,7 +10,7 @@ const InputFood = props => {
 
     return(
         <View>
-            <TextInput style={css.input} placeholder="In you frigde..." value={value} onChangeText={txt => setValue(txt)} />
+            <TextInput style={css.input} placeholder="in you frigde..." value={value} onChangeText={txt => setValue(txt)} />
             <Button title='add item' onPress={addItem} />
         </View>
     )

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { View, ScrollView, StyleSheet, Image, TouchableOpacity, Text } from 'react-native'
 
-
 const Home = (props) => {
 
     return(
@@ -57,8 +56,8 @@ const css = StyleSheet.create({
         paddingLeft: 20
     },
     image: {
-        width: 55,
-        height: 65,
+        width: 48,
+        height: 55,
         paddingRight: 10
     },
     box: {

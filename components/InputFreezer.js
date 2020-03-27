@@ -9,7 +9,7 @@ const InputFreezer = props => {
     }
     return(
         <View>
-            <TextInput style={css.input} placeholder='In yor freezer...' value={value} onChangeText={txt => setValue(txt)} />
+            <TextInput style={css.input} placeholder='in yor freezer...' value={value} onChangeText={txt => setValue(txt)} />
             <Button title='add item' onPress={addItem} />
         </View>
     )
